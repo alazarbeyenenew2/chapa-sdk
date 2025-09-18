@@ -7,7 +7,7 @@ type Chapa struct {
 	Password string
 }
 
-func NewClient(username, password string) *Chapa {
+func NewClient(username string, password string) *Chapa {
 	// test response
 	return &Chapa{
 		Username: username,
