@@ -67,10 +67,21 @@ type SubAccount struct {
 	SplitType     string  `json:"split_type"`
 }
 
-type SubaccountResp struct {
-	Message string `json:"message"`
-	Status  string `json:"status"`
-	Data    struct {
-		SubaccountID string `json:"subaccounts[id]"`
-	} `json:"data"`
+type SplitPaymentReq struct {
+	Amount        string `json:"amount"`
+	Currency      string `json:"currency"`
+	Email         string `json:"email"`
+	FirstName     string `json:"first_name"`
+	LastName      string `json:"last_name"`
+	PhoneNumber   string `json:"phone_number"`
+	TxRef         string `json:"tx_ref"`
+	CallbackURL   string `json:"callback_url"`
+	ReturnURL     string `json:"return_url"`
+	Customization struct {
+		Title       string `json:"title"`
+		Description string `json:"description"`
+	} `json:"customization"`
+	Subaccounts struct {
+		ID string `json:"id"`
+	} `json:"subaccounts"`
 }
