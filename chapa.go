@@ -1,4 +1,4 @@
-package chapa
+package chapasdk
 
 import "github.com/alazarbeyenenew2/chapasdk/pkg/service"
 
