@@ -1,21 +1,36 @@
 package service
 
-import "fmt"
+import (
+	httpclient "github.com/alazarbeyenenew2/chapasdk/platform/httpClient"
+	"github.com/alazarbeyenenew2/chapasdk/platform/logger"
+)
 
 type Chapa struct {
-	Username string
-	Password string
+	PublicKey          string
+	Secretkey          string
+	Encryptionkey      string
+	InitTransactionUrl string
+	HttpClient         *httpclient.Client
+	logger             *logger.ZapLogger
 }
 
-func NewClient(username string, password string) *Chapa {
+func NewClient(
+	PublicKey string,
+	Secretkey string,
+	Encryptionkey string,
+	InitTransactionUrl string,
+	HttpClient *httpclient.Client,
+	logger *logger.ZapLogger,
+
+) *Chapa {
 	// test response
 	return &Chapa{
-		Username: username,
-		Password: password,
+		PublicKey:          PublicKey,
+		Secretkey:          Secretkey,
+		Encryptionkey:      Encryptionkey,
+		InitTransactionUrl: InitTransactionUrl,
+		HttpClient:         HttpClient,
+		logger:             logger,
 	}
 
-}
-
-func (c *Chapa) Test() string {
-	return fmt.Sprintf("username %s password %s", c.Username, c.Password)
 }
