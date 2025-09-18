@@ -6,7 +6,6 @@ import (
 	"github.com/alazarbeyenenew2/chapasdk/pkg/service"
 	httpclient "github.com/alazarbeyenenew2/chapasdk/platform/httpClient"
 	"github.com/alazarbeyenenew2/chapasdk/platform/logger"
-	"github.com/spf13/viper"
 )
 
 func NewClient(
@@ -23,6 +22,6 @@ func NewClient(
 	}
 
 	return service.NewClient(
-		PublicKey, Secretkey, Encryptionkey, viper.GetString("chapa.initTransactionURL"), httpClient, logger,
+		PublicKey, Secretkey, Encryptionkey, httpClient, logger,
 	)
 }
