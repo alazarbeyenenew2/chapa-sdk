@@ -34,13 +34,12 @@ func (s *Chapa) VerifyAcceptPayment(cxt context.Context, PaymentRef string) (mod
 	return response, nil
 }
 
-func (s *Chapa) CreateSubAccount(ctx context.Context, req model.SubAccount) (model.SubaccountResp, error) {
-	var response model.SubaccountResp
-
-	if err := s.HttpClient.DoPost(constants.CREATE_SUB_ACCOUNT_URL, req, map[string]string{"Authorization": s.authorization}, &response); err != nil {
+func (s *Chapa) SplitPayment(ctx context.Context, req model.SplitPaymentReq) (any, error) {
+	var response model.InitPaymentResp
+	if err := s.HttpClient.DoPost(constants.INIT_ACCEPT_PAYMENT_URL, req, map[string]string{"Authorization": s.authorization}, &response); err != nil {
 		//log error
 		s.logger.Error(err.Error(), zap.Any("req", req))
-		return model.SubaccountResp{}, err
+		return model.InitPaymentResp{}, err
 	}
 	return response, nil
 }
