@@ -3,15 +3,17 @@ package service
 import "fmt"
 
 type Chapa struct {
-	secretKey string
+	Username string
+	Password string
 }
 
-func NewClient(secretKey string) *Chapa {
+func NewClient(username, password string) *Chapa {
 	return &Chapa{
-		secretKey: secretKey,
+		Username: username,
+		Password: password,
 	}
 }
 
 func (c *Chapa) Test() string {
-	return fmt.Sprintf("test")
+	return fmt.Sprintf("username %s password %s", c.Username, c.Password)
 }
