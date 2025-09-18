@@ -33,3 +33,5 @@ func (s *Chapa) VerifyAcceptPayment(cxt context.Context, PaymentRef string) (mod
 
 	return response, nil
 }
+
+func (s *Chapa) SplitPayment()
