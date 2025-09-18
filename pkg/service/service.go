@@ -8,10 +8,12 @@ type Chapa struct {
 }
 
 func NewClient(username, password string) *Chapa {
+	// test response
 	return &Chapa{
 		Username: username,
 		Password: password,
 	}
+
 }
 
 func (c *Chapa) Test() string {
