@@ -57,3 +57,20 @@ type VerifyAcceptPaymentResp struct {
 	Status  string                      `json:"status"`
 	Data    VerifyAcceptPaymentRespData `json:"data"`
 }
+
+type SubAccount struct {
+	BusinessName  string  `json:"business_name"`
+	AccountName   string  `json:"account_name"`
+	BankCode      int     `json:"bank_code"`
+	AccountNumber string  `json:"account_number"`
+	SplitValue    float64 `json:"split_value"`
+	SplitType     string  `json:"split_type"`
+}
+
+type SubaccountResp struct {
+	Message string `json:"message"`
+	Status  string `json:"status"`
+	Data    struct {
+		SubaccountID string `json:"subaccounts[id]"`
+	} `json:"data"`
+}
