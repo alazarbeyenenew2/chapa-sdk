@@ -1,4 +1,4 @@
-package main
+package chapasdk
 
 import "github.com/alazarbeyenenew2/chapa-sdk/pkg/service"
 
