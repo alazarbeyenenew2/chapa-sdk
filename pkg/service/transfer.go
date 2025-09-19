@@ -42,3 +42,17 @@ func (s *Chapa) BulkTransfer(ctx context.Context, req model.BulkTransferRequest)
 	}
 	return response, nil
 }
+
+func (s *Chapa) CheckBulkTransferStatus(ctx context.Context, request model.CheckTransferRequest) (model.CheckTransferResponse, error) {
+	var response model.CheckTransferResponse
+	if err := s.HttpClient.DoGet(
+		fmt.Sprintf(constants.CHECK_BULK_TRANSFER_URL, request.BatchID, request.Page, request.PerPage),
+		map[string]string{"Authorization": s.authorization},
+		&response,
+	); err != nil {
+		s.logger.Error(err.Error(), zap.Any("request", request))
+		return model.CheckTransferResponse{}, err
+	}
+
+	return response, nil
+}
