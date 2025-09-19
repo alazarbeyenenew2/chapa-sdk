@@ -76,13 +76,19 @@ type BulkTransferResponseData struct {
 }
 
 // check transfer
-type CheckTransferRequest struct {
+type CheckBulkTransferRequest struct {
 	BatchID int `json:"batch_id"`
+	Page    int `json:"page"`
+	PerPage int `json:"per_page"`
+}
+
+type CheckTransferRequest struct {
 	Page    int `json:"page"`
 	PerPage int `json:"per_page"`
 }
 type CheckTransferResponse struct {
 	Message string              `json:"message"`
+	Status  string              `json:"status"`
 	Meta    CheckTransferMeta   `json:"meta"`
 	Data    []CheckTransferData `json:"data"`
 }
