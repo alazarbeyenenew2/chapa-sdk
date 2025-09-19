@@ -9,4 +9,5 @@ const (
 	TRANSACTION_LOGS_URL      = "https://api.chapa.co/v1/transaction/events/%s"
 	TRANSFER_URL              = "https://api.chapa.co/v1/transfers"
 	VERIFY_TRANSFER_URL       = "https://api.chapa.co/v1/transfers/verify/%s"
+	CHECK_BULK_TRANSFER_URL   = "https://api.chapa.co/v1/transfers?batch_id=%d&page=%d&per_page=%d"
 )
