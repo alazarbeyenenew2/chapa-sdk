@@ -7,4 +7,5 @@ const (
 	CREATE_SUB_ACCOUNT_URL    = "https://api.chapa.co/v1/subaccount"
 	VIEW_TRANSACTIONS_URL     = "https://api.chapa.co/v1/transactions/per_page=%d&page=%d"
 	TRANSACTION_LOGS_URL      = "https://api.chapa.co/v1/transaction/events/%s"
+	TRANSFER_URL              = "https://api.chapa.co/v1/transfers"
 )
