@@ -13,4 +13,12 @@ const (
 	CHECK_TRANSFER_URL        = "https://api.chapa.co/v1/transfers?page=%d&per_page=%d"
 	BALANCE_URL               = "https://api.chapa.co/v1/balances"
 	SWAP_URL                  = "https://api.chapa.co/v1/swap"
+	DIRECT_CHARGE_URL         = "https://api.chapa.co/v1/charges?type=%s"
 )
+
+var DIRECT_CHARGE_TYPES = map[string]bool{
+	"telebirr":     true,
+	"mpesa":        true,
+	"CBEBirr":      true,
+	"Coopay-Ebirr": true,
+}
