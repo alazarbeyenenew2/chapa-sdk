@@ -8,4 +8,5 @@ const (
 	VIEW_TRANSACTIONS_URL     = "https://api.chapa.co/v1/transactions/per_page=%d&page=%d"
 	TRANSACTION_LOGS_URL      = "https://api.chapa.co/v1/transaction/events/%s"
 	TRANSFER_URL              = "https://api.chapa.co/v1/transfers"
+	VERIFY_TRANSFER_URL       = "https://api.chapa.co/v1/transfers/verify/%s"
 )

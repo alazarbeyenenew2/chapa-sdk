@@ -1,6 +1,10 @@
 package model
 
-import "github.com/shopspring/decimal"
+import (
+	"time"
+
+	"github.com/shopspring/decimal"
+)
 
 type TransferRequest struct {
 	AccountName   string          `json:"account_name"`
@@ -15,4 +19,32 @@ type TransferResponse struct {
 	Message string `json:"message"`
 	Status  string `json:"status"`
 	Data    string `json:"data"`
+}
+
+// verify transfer
+
+type VerifyTransferResponseData struct {
+	AccountName         string    `json:"account_name"`
+	AccountNumber       string    `json:"account_number"`
+	Mobile              string    `json:"mobile"`
+	Currency            string    `json:"currency"`
+	Amount              int       `json:"amount"`
+	Charge              int       `json:"charge"`
+	Mode                string    `json:"mode"`
+	TransferMethod      string    `json:"transfer_method"`
+	Narration           string    `json:"narration"`
+	ChapaTransferID     string    `json:"chapa_transfer_id"`
+	BankCode            int       `json:"bank_code"`
+	BankName            string    `json:"bank_name"`
+	CrossPartyReference string    `json:"cross_party_reference"`
+	IPAddress           string    `json:"ip_address"`
+	Status              string    `json:"status"`
+	TxRef               string    `json:"tx_ref"`
+	CreatedAt           time.Time `json:"created_at"`
+	UpdatedAt           time.Time `json:"updated_at"`
+}
+type VerifyTransferResponse struct {
+	Message string                     `json:"message"`
+	Status  string                     `json:"status"`
+	Data    VerifyTransferResponseData `json:"data"`
 }
