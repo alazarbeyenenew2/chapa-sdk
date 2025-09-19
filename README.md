@@ -1,6 +1,6 @@
 # Unofficial Chapa SDK for Golang
 
-[![Chapa Logo](banner.png)](https://chapa.co/)
+[![Chapa Logo](image.png)](https://chapa.co/)
 
 Unofficial SDK for Chapa Payment Gateway in Ethiopia.
 
@@ -52,3 +52,4 @@ func main() {
     fmt.Println("Transaction Response:", resp)
 }
 ```
+
