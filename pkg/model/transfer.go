@@ -48,3 +48,29 @@ type VerifyTransferResponse struct {
 	Status  string                     `json:"status"`
 	Data    VerifyTransferResponseData `json:"data"`
 }
+
+// bulk transfer
+type BulkTransferRequest struct {
+	Title    string             `json:"title"`
+	Currency string             `json:"currency"`
+	BulkData []BulkTransferData `json:"bulk_data"`
+}
+
+type BulkTransferData struct {
+	AccountName   string `json:"account_name"`
+	AccountNumber string `json:"account_number"`
+	Amount        int    `json:"amount"`
+	Reference     string `json:"reference"`
+	BankCode      int    `json:"bank_code"`
+}
+
+type BulkTransferResponse struct {
+	Message string                   `json:"message"`
+	Status  string                   `json:"status"`
+	Data    BulkTransferResponseData `json:"data"`
+}
+
+type BulkTransferResponseData struct {
+	ID        int       `json:"id"`
+	CreatedAt time.Time `json:"created_at"`
+}

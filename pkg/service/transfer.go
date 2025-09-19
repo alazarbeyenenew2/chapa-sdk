@@ -32,3 +32,13 @@ func (s *Chapa) VerifyTransfer(ctx context.Context, PaymentRef string) (model.Ve
 
 	return response, nil
 }
+
+func (s *Chapa) BulkTransfer(ctx context.Context, req model.BulkTransferRequest) (model.BulkTransferResponse, error) {
+	var response model.BulkTransferResponse
+	if err := s.HttpClient.DoPost(constants.TRANSFER_URL, req, map[string]string{"Authorization": s.authorization}, &response); err != nil {
+		//log error
+		s.logger.Error(err.Error(), zap.Any("req", req))
+		return model.BulkTransferResponse{}, err
+	}
+	return response, nil
+}
