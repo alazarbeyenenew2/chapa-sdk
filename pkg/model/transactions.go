@@ -1,5 +1,7 @@
 package model
 
+import "time"
+
 type ViewTransactionsRequest struct {
 	Page    int `json:"page"`
 	PerPage int `json:"per_page"`
@@ -41,4 +43,20 @@ type Pagination struct {
 	FirstPageURL string `json:"first_page_url"`
 	NextPageURL  string `json:"next_page_url"`
 	PrevPageURL  string `json:"prev_page_url"`
+}
+
+// transaction logs
+
+type TransactionLogsResponse struct {
+	Message string                `json:"message"`
+	Status  string                `json:"status"`
+	Data    []TransactionLogsData `json:"data"`
+}
+
+type TransactionLogsData struct {
+	Item      int       `json:"item"`
+	Message   string    `json:"message"`
+	Type      string    `json:"type"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
 }

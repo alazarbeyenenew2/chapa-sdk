@@ -27,3 +27,17 @@ func (s *Chapa) ViewTransactions(ctx context.Context, req model.ViewTransactions
 	}
 	return response, nil
 }
+
+func (s *Chapa) GetTransactionLogs(ctx context.Context, PaymentRef string) (model.TransactionLogsResponse, error) {
+	var response model.TransactionLogsResponse
+	if err := s.HttpClient.DoGet(
+		fmt.Sprintf(constants.TRANSACTION_LOGS_URL, PaymentRef),
+		map[string]string{"Authorization": s.authorization},
+		&response,
+	); err != nil {
+		s.logger.Error(err.Error(), zap.Any("payment ref", PaymentRef))
+		return model.TransactionLogsResponse{}, err
+	}
+
+	return response, nil
+}
