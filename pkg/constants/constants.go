@@ -11,4 +11,5 @@ const (
 	VERIFY_TRANSFER_URL       = "https://api.chapa.co/v1/transfers/verify/%s"
 	CHECK_BULK_TRANSFER_URL   = "https://api.chapa.co/v1/transfers?batch_id=%d&page=%d&per_page=%d"
 	CHECK_TRANSFER_URL        = "https://api.chapa.co/v1/transfers?page=%d&per_page=%d"
+	BALANCE_URL               = "https://api.chapa.co/v1/balances"
 )
