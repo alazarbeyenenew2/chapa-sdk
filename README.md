@@ -2,7 +2,7 @@
 
 [![Chapa Logo](image.png)](https://chapa.co/)
 
-Unofficial SDK for Chapa Payment Gateway in Ethiopia.
+Unofficial Golang SDK for Chapa Payment Gateway in Ethiopia.
 
 ## Overview
 This SDK provides a convenient way to interact with Chapa's API for payments in Ethiopia.
@@ -52,4 +52,5 @@ func main() {
     fmt.Println("Transaction Response:", resp)
 }
 ```
+
 
